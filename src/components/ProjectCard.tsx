@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ExternalLink, Github } from 'lucide-react'
+import { ExternalLink, Github, Code2 } from 'lucide-react'
 
 interface ProjectCardProps {
   title: string
@@ -12,39 +12,96 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ title, description, image, tags, githubUrl, liveUrl }: ProjectCardProps) {
   return (
-    <motion.div 
-      whileHover={{ y: -10 }}
-      className="glass-card rounded-2xl overflow-hidden flex flex-col group"
+    <motion.div
+      whileHover={{ y: -12 }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
+      className="group relative rounded-3xl overflow-hidden border-gradient flex flex-col h-full"
+      style={{ background: 'rgba(10,15,35,0.8)' }}
     >
-      <div className="h-48 overflow-hidden relative">
-        <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors z-10" />
-        <img src={image} alt={title} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+      {/* Image Container */}
+      <div className="relative h-56 overflow-hidden">
+        {/* Overlay on hover */}
+        <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-center justify-center gap-4">
+          {githubUrl && (
+            <motion.a 
+              href={githubUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-12 h-12 rounded-full bg-slate-900/80 backdrop-blur-md flex items-center justify-center text-white border border-white/10 hover:border-cyan-400/50 hover:text-cyan-400 transition-all"
+            >
+              <Github size={20} />
+            </motion.a>
+          )}
+          {liveUrl && (
+            <motion.a 
+              href={liveUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-12 h-12 rounded-full bg-slate-900/80 backdrop-blur-md flex items-center justify-center text-white border border-white/10 hover:border-fuchsia-400/50 hover:text-fuchsia-400 transition-all"
+            >
+              <ExternalLink size={20} />
+            </motion.a>
+          )}
+        </div>
+        <img 
+          src={image} 
+          alt={title} 
+          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" 
+        />
+        {/* Gradient mask at bottom of image */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0a0f23] to-transparent z-0" />
       </div>
-      <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-2xl font-bold mb-2">{title}</h3>
-        <p className="text-slate-400 mb-6 flex-grow">{description}</p>
+
+      {/* Content */}
+      <div className="p-7 flex flex-col flex-grow relative z-10">
+        <div className="flex items-center gap-2 mb-3">
+          <Code2 size={16} className="text-cyan-400/70" />
+          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">Project Case Study</span>
+        </div>
         
-        <div className="flex flex-wrap gap-2 mb-6">
+        <h3 className="text-2xl font-black text-white mb-3 group-hover:text-cyan-400 transition-colors">{title}</h3>
+        <p className="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">{description}</p>
+        
+        {/* Tech Tags */}
+        <div className="flex flex-wrap gap-2 mb-8 mt-auto">
           {tags.map((tag, idx) => (
-            <span key={idx} className="text-xs font-medium px-3 py-1 bg-slate-800/80 rounded-full border border-slate-700/50 text-cyan-300">
+            <span key={idx} className="text-[10px] font-bold px-3 py-1.5 rounded-lg border border-white/5 bg-white/5 text-slate-300 uppercase tracking-tight group-hover:border-cyan-500/20 group-hover:bg-cyan-500/5 transition-colors">
               {tag}
             </span>
           ))}
         </div>
         
-        <div className="flex items-center gap-4 mt-auto">
-          {githubUrl && (
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-semibold text-slate-300 hover:text-white transition-colors">
-              <Github size={18} /> Code
-            </a>
-          )}
-          {liveUrl && (
-            <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors ml-auto">
-              <ExternalLink size={18} /> Live Demo
-            </a>
-          )}
+        {/* Footer Link */}
+        <div className="flex items-center justify-between pt-5 border-t border-white/5 mt-auto">
+          <span className="text-xs font-semibold text-slate-500 group-hover:text-slate-300 transition-colors italic">Case Study</span>
+          <div className="flex items-center gap-1.5 text-xs font-bold text-cyan-400 group-hover:underline">
+            View Details <ArrowRight size={14} />
+          </div>
         </div>
       </div>
     </motion.div>
+  )
+}
+
+function ArrowRight({ size, className }: { size: number, className?: string }) {
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="2.5" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      className={className}
+    >
+      <path d="M5 12h14" />
+      <path d="m12 5 7 7-7 7" />
+    </svg>
   )
 }
