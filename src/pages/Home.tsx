@@ -35,8 +35,20 @@ export default function Home() {
             </div>
             <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-4 leading-tight">
               I am a <br className="hidden md:block" />
-              <span className="text-gradient">Full Stack</span><br/>
-              Web Developer
+              <motion.span 
+                 animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+                 transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+                 className="text-gradient bg-[length:200%_auto] inline-block"
+              >
+                Full Stack
+              </motion.span><br/>
+              <motion.span
+                 animate={{ scale: [1, 1.02, 1], color: ["#cbd5e1", "#ffffff", "#cbd5e1"] }}
+                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                 className="inline-block text-slate-300"
+              >
+                Web Developer
+              </motion.span>
             </h1>
             <p className="text-lg md:text-xl text-slate-400 max-w-lg mb-10 font-light leading-relaxed">
                I engineer secure, highly performant, and beautiful digital experiences leveraging modern technologies like React and Tailwind CSS.
