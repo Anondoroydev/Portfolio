@@ -19,34 +19,54 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-32 scroll-smooth">
       {/* Hero Section */}
-      <section id="hero" className="min-h-[85vh] flex flex-col justify-center items-center text-center relative pt-20">
+      <section id="hero" className="min-h-[85vh] flex items-center relative pt-20">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/20 rounded-full blur-[120px] -z-10 mix-blend-screen pointer-events-none" />
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-fuchsia-500/10 rounded-full blur-[100px] -z-10 mix-blend-screen pointer-events-none" />
         
-        <motion.div
-           initial={{ opacity: 0, scale: 0.9 }}
-           animate={{ opacity: 1, scale: 1 }}
-           transition={{ duration: 0.7, ease: "easeOut" }}
-        >
-          <div className="inline-block px-4 py-1.5 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-md mb-8 text-sm font-medium text-slate-300">
-            👋 Welcome to my digital space
-          </div>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 leading-tight">
-            Crafting Digital <br className="hidden md:block" />
-            <span className="text-gradient">Experiences</span>
-          </h1>
-          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-             Hello! I'm a passionate web developer focused on creating stunning, performant web applications using modern technologies like React, Tailwind CSS, and Typescript.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#projects" className="glass flex items-center justify-center gap-2 px-8 py-3.5 rounded-full hover:bg-cyan-500/20 hover:border-cyan-400/50 transition-all font-semibold text-white group">
-              View My Work <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a href="#contact" className="flex items-center justify-center gap-2 px-8 py-3.5 rounded-full hover:bg-slate-800 transition-colors font-semibold text-slate-300 border border-transparent hover:border-slate-700">
-              Contact Me
-            </a>
-          </div>
-        </motion.div>
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+             initial={{ opacity: 0, x: -50 }}
+             animate={{ opacity: 1, x: 0 }}
+             transition={{ duration: 0.7, ease: "easeOut" }}
+             className="text-left"
+          >
+            <div className="inline-block px-4 py-1.5 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-md mb-8 text-sm font-medium text-slate-300">
+              👋 Hello World
+            </div>
+            <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-4 leading-tight">
+              I am a <br className="hidden md:block" />
+              <span className="text-gradient">Full Stack</span><br/>
+              Web Developer
+            </h1>
+            <p className="text-lg md:text-xl text-slate-400 max-w-lg mb-10 font-light leading-relaxed">
+               I engineer secure, highly performant, and beautiful digital experiences leveraging modern technologies like React and Tailwind CSS.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#contact" className="glass flex items-center justify-center gap-2 px-8 py-3.5 rounded-full hover:bg-cyan-500/20 hover:border-cyan-400/50 transition-all font-semibold text-white group bg-cyan-600/20 border-cyan-500/30">
+                Hire Me <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a href="#projects" className="flex items-center justify-center gap-2 px-8 py-3.5 rounded-full hover:bg-slate-800 transition-colors font-semibold text-slate-300 border border-slate-700">
+                View My Work
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div
+             initial={{ opacity: 0, scale: 0.8 }}
+             animate={{ opacity: 1, scale: 1 }}
+             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+             className="relative flex justify-center mt-12 lg:mt-0"
+          >
+            <motion.div
+              animate={{ y: [0, -20, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              className="relative w-full max-w-sm lg:max-w-lg"
+            >
+              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/30 to-fuchsia-500/30 rounded-[3rem] blur-3xl -z-10" />
+              <img src="/avatar.png" alt="Developer Avatar" className="w-full h-auto object-cover rounded-[3rem] border border-white/10 shadow-2xl shadow-cyan-500/20" />
+            </motion.div>
+          </motion.div>
+        </div>
       </section>
 
       {/* About Section */}
