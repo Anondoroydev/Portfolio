@@ -337,17 +337,57 @@ export default function Home() {
               <h2 className="section-title">Featured <span className="text-gradient">Projects</span></h2>
               <div className="neon-line w-24 mx-auto mt-4" />
             </div>
+            
             <motion.div variants={staggerGrid} initial="hidden" whileInView="visible" viewport={{ once: true }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <ProjectCard title="E-Commerce Store" description="Full-featured shopping cart with secure payments & clean CMS backend."
-                image="https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1000&auto=format&fit=crop"
-                tags={['React', 'Tailwind', 'Stripe']} githubUrl="#" liveUrl="#" />
-              <ProjectCard title="Dashboard Analytics" description="Real-time data visualization dashboard with highly interactive charts."
-                image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"
-                tags={['TypeScript', 'Recharts', 'Framer']} githubUrl="#" />
-              <ProjectCard title="AI Image Generator" description="Prompt-based interface powered by Stable Diffusion APIs."
-                image="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1000&auto=format&fit=crop"
-                tags={['React', 'OpenAI API', 'Tailwind']} liveUrl="#" />
+              {[
+                {
+                  title: "E-Commerce Luxury",
+                  description: "Premium shopping experience with Stripe integration & real-time inventory tracking.",
+                  image: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1000&auto=format&fit=crop",
+                  tags: ["React", "Next.js", "Stripe"]
+                },
+                {
+                  title: "SaaS Dashboard",
+                  description: "Complex data visualization with interactive charts & user management system.",
+                  image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
+                  tags: ["TypeScript", "Recharts", "Node.js"]
+                },
+                {
+                  title: "AI Creative Studio",
+                  description: "Image generation platform using Stable Diffusion with custom model training.",
+                  image: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1000&auto=format&fit=crop",
+                  tags: ["Python", "React", "OpenAI"]
+                },
+                {
+                  title: "Crypto Wallet v2",
+                  description: "Secure multi-chain wallet with real-time price feeds and swap functionality.",
+                  image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1000&auto=format&fit=crop",
+                  tags: ["Web3", "Solidity", "Ether.js"]
+                },
+                {
+                  title: "Social Connect",
+                  description: "Real-time communication platform with group chats & video calling support.",
+                  image: "https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?q=80&w=1000&auto=format&fit=crop",
+                  tags: ["Socket.io", "Express", "React"]
+                },
+                {
+                  title: "Traveler's Hub",
+                  description: "Complete flight & hotel booking system with interactive map features.",
+                  image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1000&auto=format&fit=crop",
+                  tags: ["Next.js", "Mapbox", "Prisma"]
+                }
+              ].map((p, idx) => (
+                <ProjectCard 
+                  key={idx}
+                  title={p.title}
+                  description={p.description}
+                  image={p.image}
+                  tags={p.tags}
+                  githubUrl="#"
+                  liveUrl="#"
+                />
+              ))}
             </motion.div>
           </motion.div>
         </div>
