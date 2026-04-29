@@ -123,6 +123,90 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* My Skills Section */}
+      <section id="skills" className="pt-20">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeInUp}
+        >
+          <div className="flex items-center gap-4 mb-12">
+            <div className="h-[1px] flex-grow bg-slate-800" />
+            <h2 className="text-3xl md:text-5xl font-black text-slate-100 uppercase tracking-widest text-center whitespace-nowrap">My Skills</h2>
+            <div className="h-[1px] flex-grow bg-slate-800" />
+          </div>
+
+          {/* Marquee Row 1 - left to right */}
+          <div className="marquee-wrapper overflow-hidden mb-4 relative">
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none" />
+            <div className="animate-marquee gap-4">
+              {[
+                { name: 'React', color: 'cyan' },
+                { name: 'TypeScript', color: 'blue' },
+                { name: 'Tailwind CSS', color: 'teal' },
+                { name: 'Node.js', color: 'green' },
+                { name: 'Next.js', color: 'slate' },
+                { name: 'PostgreSQL', color: 'indigo' },
+                { name: 'Git', color: 'orange' },
+                { name: 'Figma', color: 'fuchsia' },
+                { name: 'React', color: 'cyan' },
+                { name: 'TypeScript', color: 'blue' },
+                { name: 'Tailwind CSS', color: 'teal' },
+                { name: 'Node.js', color: 'green' },
+                { name: 'Next.js', color: 'slate' },
+                { name: 'PostgreSQL', color: 'indigo' },
+                { name: 'Git', color: 'orange' },
+                { name: 'Figma', color: 'fuchsia' },
+              ].map((skill, i) => (
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full gl glass-card text-sm font-semibold text-slate-200 hover:text-cyan-300 hover:border-cyan-400/40 transition-colors cursor-default whitespace-nowrap mr-4"
+                >
+                  <span className="w-2 h-2 rounded-full bg-cyan-400 opacity-80 animate-pulse" />
+                  {skill.name}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Marquee Row 2 - right to left */}
+          <div className="marquee-wrapper overflow-hidden relative">
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none" />
+            <div className="animate-marquee gap-4" style={{ animationDirection: 'reverse', animationDuration: '20s' }}>
+              {[
+                { name: 'Docker', color: 'blue' },
+                { name: 'MongoDB', color: 'green' },
+                { name: 'Express.js', color: 'slate' },
+                { name: 'REST API', color: 'indigo' },
+                { name: 'JavaScript', color: 'yellow' },
+                { name: 'HTML5', color: 'orange' },
+                { name: 'CSS3', color: 'blue' },
+                { name: 'Prisma', color: 'fuchsia' },
+                { name: 'Docker', color: 'blue' },
+                { name: 'MongoDB', color: 'green' },
+                { name: 'Express.js', color: 'slate' },
+                { name: 'REST API', color: 'indigo' },
+                { name: 'JavaScript', color: 'yellow' },
+                { name: 'HTML5', color: 'orange' },
+                { name: 'CSS3', color: 'blue' },
+                { name: 'Prisma', color: 'fuchsia' },
+              ].map((skill, i) => (
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-card text-sm font-semibold text-slate-200 hover:text-fuchsia-300 hover:border-fuchsia-400/40 transition-colors cursor-default whitespace-nowrap mr-4"
+                >
+                  <span className="w-2 h-2 rounded-full bg-fuchsia-400 opacity-80 animate-pulse" />
+                  {skill.name}
+                </span>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
       {/* Projects Section */}
       <section id="projects" className="pt-20">
         <motion.div
