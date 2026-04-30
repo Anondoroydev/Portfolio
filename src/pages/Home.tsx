@@ -50,11 +50,13 @@ export default function Home() {
       <BackgroundStars />
       
       {/* ──── HERO ──── */}
-      <section id="hero" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-        {/* Ambient blobs */}
-        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 left-1/2 w-[300px] h-[300px] bg-fuchsia-500/10 rounded-full blur-[100px] pointer-events-none" />
+      <section id="hero" className="relative min-h-screen flex items-center pt-20">
+        {/* Ambient blobs - Wrapped in a separate overflow-hidden container to prevent clipping the foreground */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+          <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px]" />
+          <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-[120px]" />
+          <div className="absolute bottom-1/4 left-1/2 w-[300px] h-[300px] bg-fuchsia-500/10 rounded-full blur-[100px]" />
+        </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -124,29 +126,35 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.9, delay: 0.25, ease: 'easeOut' }}
-              className="flex justify-center"
+              className="flex justify-center items-center h-full"
             >
-              <div className="relative">
+              <div className="relative w-full max-w-[440px] aspect-square flex items-center justify-center">
                 {/* Glow ring */}
-                <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-tr from-cyan-500/30 via-indigo-500/20 to-fuchsia-500/30 blur-2xl scale-105" />
-                {/* Rotating border */}
+                <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-tr from-cyan-500/30 via-indigo-500/20 to-fuchsia-500/30 blur-2xl scale-110" />
+                
+                {/* Clean Rotating Border Layer */}
+                <div className="absolute inset-0 rounded-[2.5rem] p-[1px] overflow-hidden pointer-events-none z-0">
+                  {/* The mask-like effect: outer is the rounded container, inner is transparent */}
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
+                    className="absolute inset-[-150%] opacity-60"
+                    style={{ background: 'conic-gradient(from 0deg, transparent, #22d3ee, transparent, #818cf8, transparent)' }}
+                  />
+                </div>
+
                 <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                  className="absolute -inset-2 rounded-[2.8rem] opacity-40"
-                  style={{ background: 'conic-gradient(from 0deg, transparent, #22d3ee, transparent, #818cf8, transparent)' }}
-                />
-                <motion.div
-                  animate={{ y: [0, -18, 0] }}
-                  transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut' }}
-                  className="relative"
+                  animate={{ y: [0, -15, 0] }}
+                  transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
+                  className="relative w-full h-full z-10 p-[1px] rounded-[2.5rem] overflow-hidden"
                 >
                   <img
                     src="/avatar.png"
                     alt="Developer Avatar"
-                    className="w-full max-w-[480px] h-auto rounded-[2.5rem] object-cover relative z-10"
-                    style={{ border: '1px solid rgba(255,255,255,0.08)' }}
+                    className="w-full h-full object-cover rounded-[2.5rem]"
                   />
+                  {/* Subtle inner shadow/border overlay */}
+                  <div className="absolute inset-0 rounded-[2.5rem] border border-white/10 pointer-events-none" />
                 </motion.div>
               </div>
             </motion.div>

@@ -15,9 +15,21 @@ export default function ProjectCard({ title, description, image, tags, githubUrl
     <motion.div
       whileHover={{ y: -12 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="group relative rounded-3xl overflow-hidden border-gradient flex flex-col h-full"
+      className="group relative rounded-3xl overflow-hidden flex flex-col h-full"
       style={{ background: 'rgba(10,15,35,0.8)' }}
     >
+      {/* Animated Border (Visible on Hover) */}
+      <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
+          className="absolute inset-[-150%] opacity-40"
+          style={{ background: 'conic-gradient(from 0deg, transparent, #22d3ee, transparent, #818cf8, transparent)' }}
+        />
+      </div>
+
+      {/* Subtle Static Border */}
+      <div className="absolute inset-0 rounded-3xl border border-white/5 pointer-events-none z-20" />
       {/* Image Container */}
       <div className="relative h-48 overflow-hidden">
         {/* Overlay on hover */}
