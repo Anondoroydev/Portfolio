@@ -77,19 +77,6 @@
   }
 }
 
-/* Star particles */
-.star {
-  position: fixed;
-  border-radius: 50%;
-  background: white;
-  animation: twinkle 3s infinite alternate;
-  pointer-events: none;
-  z-index: 0;
-}
-@keyframes twinkle {
-  0%   { opacity: 0.1; transform: scale(1); }
-  100% { opacity: 0.6; transform: scale(1.5); }
-}
 
 /* Marquee */
 @keyframes marquee {
@@ -110,3 +97,4 @@
   height: 2px;
   background: linear-gradient(90deg, transparent, #22d3ee, #818cf8, transparent);
 }
+ 

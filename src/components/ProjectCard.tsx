@@ -15,21 +15,22 @@ export default function ProjectCard({ title, description, image, tags, githubUrl
     <motion.div
       whileHover={{ y: -12 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="group relative rounded-3xl overflow-hidden flex flex-col h-full"
-      style={{ background: 'rgba(10,15,35,0.8)' }}
+      className="group relative p-[2px] rounded-3xl overflow-hidden flex flex-col h-full bg-white/5"
     >
-      {/* Animated Border (Visible on Hover) */}
-      <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+      {/* Running RGB Rainbow Border (Always Visible) */}
+      <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
         <motion.div
           animate={{ rotate: 360 }}
-          transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
-          className="absolute inset-[-150%] opacity-40"
-          style={{ background: 'conic-gradient(from 0deg, transparent, #22d3ee, transparent, #818cf8, transparent)' }}
+          transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
+          className="absolute inset-[-150%] opacity-50"
+          style={{ 
+            background: 'conic-gradient(from 0deg, transparent 20%, #ff0000 30%, #ffff00 45%, #00ff00 60%, #00ffff 75%, #0000ff 90%, #ff00ff 100%)' 
+          }}
         />
       </div>
 
-      {/* Subtle Static Border */}
-      <div className="absolute inset-0 rounded-3xl border border-white/5 pointer-events-none z-20" />
+      {/* Main Content Wrapper (Cleans up rounding and background) */}
+      <div className="relative z-10 flex flex-col h-full w-full bg-[#0a0f23] rounded-[1.4rem] overflow-hidden">
       {/* Image Container */}
       <div className="relative h-48 overflow-hidden">
         {/* Overlay on hover */}
@@ -75,7 +76,7 @@ export default function ProjectCard({ title, description, image, tags, githubUrl
           <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-500">Case Study</span>
         </div>
         
-        <h3 className="text-xl font-black text-white mb-2 group-hover:text-cyan-400 transition-colors">{title}</h3>
+        <h3 className="text-xl font-black text-white mb-2 group-hover:text-cyan-400 transition-colors uppercase">{title}</h3>
         <p className="text-slate-400 text-xs leading-relaxed mb-4 line-clamp-2">{description}</p>
         
         {/* Tech Tags */}
@@ -93,6 +94,7 @@ export default function ProjectCard({ title, description, image, tags, githubUrl
           <div className="flex items-center gap-1.5 text-xs font-bold text-cyan-400 group-hover:underline">
             View <ArrowRight size={14} />
           </div>
+        </div>
         </div>
       </div>
     </motion.div>
