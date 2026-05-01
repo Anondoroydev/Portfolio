@@ -4,7 +4,7 @@ import { aboutCards } from '../../constants'
 
 export default function About() {
   return (
-    <section id="about" className="py-32">
+    <section id="about" className="pt-16 pb-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={fadeUp}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">

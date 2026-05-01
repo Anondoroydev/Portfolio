@@ -4,12 +4,10 @@ import { Download, Layout, Cpu, Database, Cloud, Code } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-[90vh] flex items-center pt-20 pb-10 overflow-hidden bg-[#050816]">
-      {/* ultra-vibrant dynamic backgrounds */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-500/15 rounded-full blur-[140px] animate-pulse" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-indigo-500/15 rounded-full blur-[140px] animate-pulse" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-fuchsia-500/10 rounded-full blur-[180px] animate-pulse" style={{ animationDelay: '4s' }} />
+    <section id="hero" className="relative min-h-[80vh] flex items-center pt-24 pb-0 overflow-hidden bg-[#050816]">
+      {/* Subtle Background Gradients - for seamless transition */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[140px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
