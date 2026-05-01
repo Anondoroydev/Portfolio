@@ -1,40 +1,34 @@
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
-import { ArrowRight } from 'lucide-react'
+import { Download, Layout } from 'lucide-react'
 
 export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
-      {/* Ambient background blobs */}
+      {/* Background ambient light */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 left-1/4 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-cyan-500/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-indigo-500/10 rounded-full blur-[100px]" />
+        <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-indigo-500/10 rounded-full blur-[100px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
-          {/* Text Content Area */}
+          {/* Stabilized Text Content */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex-1 text-center lg:text-left order-2 lg:order-1"
+            className="text-center lg:text-left"
           >
-            {/* Status Badge */}
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 bg-cyan-500/5 border border-cyan-500/20 text-cyan-400 text-xs font-bold uppercase tracking-widest"
-            >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 bg-cyan-500/5 border border-cyan-500/20 text-cyan-400 text-xs font-bold uppercase tracking-widest">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
               Available for new projects
-            </motion.div>
+            </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-8">
               <span className="text-slate-200">I am a</span>
-              <div className="text-gradient mt-2 text-2xl sm:text-4xl md:text-5xl lg:text-6xl whitespace-nowrap overflow-visible">
+              <div className="text-gradient mt-2 text-xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
                 <TypeAnimation
                   sequence={[
                     'Full-Stack Developer', 2200,
@@ -44,87 +38,91 @@ export default function Hero() {
                     'Digital Solution Builder', 2200,
                   ]}
                   wrapper="span"
-                  speed={50}
+                  speed={55}
                   repeat={Infinity}
                 />
               </div>
             </h1>
 
-            <p className="text-slate-400 text-base md:text-lg leading-relaxed max-w-2xl lg:max-w-md mx-auto lg:mx-0 mb-10">
+            <p className="text-slate-400 text-lg leading-relaxed max-w-md mx-auto lg:mx-0 mb-12">
               Transforming innovative ideas into high-performance digital realities with cutting-edge web technologies.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <a href="#contact" className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2 text-white group px-8 py-4">
-                Hire Me <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5">
+              <a href="/resume.pdf" target="_blank" className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2 text-white group">
+                <Download size={18} /> Resume
               </a>
-              <a href="#projects" className="btn-secondary w-full sm:w-auto flex items-center justify-center gap-2 text-slate-300 px-8 py-4">
-                View My Work
+              <a href="#projects" className="btn-secondary w-full sm:w-auto flex items-center justify-center gap-2 text-slate-300">
+                <Layout size={18} /> Portfolio
               </a>
-            </div>
-
-            {/* Simple Stats Bar */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-8 md:gap-12 mt-12 pt-8 border-t border-white/5">
-              {[
-                { label: 'Experience', val: '2+ Years' },
-                { label: 'Projects', val: '20+' },
-                { label: 'Response', val: '100%' },
-              ].map((s, i) => (
-                <div key={i} className="text-center lg:text-left">
-                  <div className="text-2xl font-black text-white">{s.val}</div>
-                  <div className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mt-1">{s.label}</div>
-                </div>
-              ))}
             </div>
           </motion.div>
 
-          {/* Image/Asset Area */}
+          {/* Quantum React Core Layout */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="flex-1 flex justify-center lg:justify-end order-1 lg:order-2"
+            className="flex justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-[320px] sm:max-w-[450px] aspect-square flex items-center justify-center">
+            <div className="relative w-full max-w-[440px] aspect-square flex items-center justify-center">
+              {/* Deep Ambient Energy Field */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 via-indigo-500/10 to-fuchsia-500/20 blur-3xl scale-125 rounded-full" />
               
-              {/* Animated Background Aura */}
-              <motion.div
-                animate={{ 
-                  scale: [1, 1.1, 1],
-                  opacity: [0.15, 0.3, 0.15]
-                }}
-                transition={{ duration: 5, repeat: Infinity }}
-                className="absolute inset-0 bg-gradient-to-tr from-cyan-500 via-indigo-500 to-fuchsia-500 blur-[80px] rounded-full"
+              {/* Atomic Orbital Rings */}
+              <motion.div 
+                animate={{ rotate: 360 }}
+                transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+                className="absolute w-[95%] h-[95%] rounded-full border-[1.5px] border-cyan-500/20 border-dashed"
+              />
+              <motion.div 
+                animate={{ rotate: -360 }}
+                transition={{ duration: 35, repeat: Infinity, ease: 'linear' }}
+                className="absolute w-[75%] h-[75%] rounded-full border-[2px] border-indigo-500/20 border-dotted"
               />
 
-              {/* Unique Borderless Float Animation */}
+              {/* Central Floating React PNG */}
               <motion.div
-                animate={{ 
-                  y: [0, -20, 0],
-                  rotate: [0, 2, 0]
-                }}
-                transition={{ 
-                  duration: 6, 
-                  repeat: Infinity, 
-                  ease: "easeInOut" 
-                }}
-                className="relative z-10 w-full"
+                animate={{ y: [0, -20, 0] }}
+                transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
+                className="relative z-10 w-full flex items-center justify-center"
               >
-                <img
-                  src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop"
-                  alt="Abstract Tech Evolution"
-                  className="w-full h-auto drop-shadow-[0_0_40px_rgba(34,211,238,0.25)] rounded-[3rem]"
-                />
+                <div className="relative flex items-center justify-center w-full">
+                  <motion.div
+                    animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute w-1/2 h-1/2 bg-cyan-400/20 rounded-full blur-xl z-0"
+                  />
+                  <motion.img
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                    src="/react-core.png"
+                    alt="React Technology PNG"
+                    className="w-2/3 h-auto relative z-20 object-contain drop-shadow-[0_0_60px_rgba(34,211,238,0.5)] hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
               </motion.div>
 
-              {/* Floating Element: Code Snippet Style */}
+              {/* Orbiting Utility Nodes */}
+              <motion.div
+                animate={{ y: [0, -15, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute top-10 right-4 p-3 bg-slate-900/80 backdrop-blur-md rounded-2xl border border-cyan-500/30 shadow-[0_0_20px_rgba(34,211,238,0.2)] z-30 hidden md:block"
+              >
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-cyan-400 rounded-full animate-ping" />
+                  <span className="text-cyan-400 font-mono text-[10px] uppercase font-black tracking-widest">System Active</span>
+                </div>
+              </motion.div>
+
               <motion.div
                 animate={{ y: [0, 15, 0] }}
-                transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                className="absolute -top-6 -right-6 p-4 glass-card rounded-2xl border border-white/10 hidden sm:block backdrop-blur-md"
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                className="absolute bottom-10 left-4 p-4 bg-slate-900/80 backdrop-blur-md rounded-2xl border border-indigo-500/30 shadow-[0_0_20px_rgba(99,102,241,0.2)] z-30 hidden md:block"
               >
-                <code className="text-cyan-400 text-xs font-mono">{"<Dev />"}</code>
+                <span className="text-indigo-400 font-mono text-[12px] font-black tracking-widest">{"<Code />"}</span>
               </motion.div>
+
             </div>
           </motion.div>
 
