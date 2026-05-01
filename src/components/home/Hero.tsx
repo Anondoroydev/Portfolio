@@ -4,112 +4,130 @@ import { ArrowRight } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center pt-20">
-      {/* Ambient blobs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px]" />
-        <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 left-1/2 w-[300px] h-[300px] bg-fuchsia-500/10 rounded-full blur-[100px]" />
+    <section id="hero" className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
+      {/* Ambient background blobs */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute top-0 left-1/4 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-cyan-500/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-indigo-500/10 rounded-full blur-[100px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left text */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
+          
+          {/* Text Content Area */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex-1 text-center lg:text-left order-2 lg:order-1"
           >
-            {/* Badge */}
+            {/* Status Badge */}
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-xs font-semibold tracking-widest uppercase"
-              style={{ background: 'rgba(34,211,238,0.08)', border: '1px solid rgba(34,211,238,0.2)', color: '#22d3ee' }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 bg-cyan-500/5 border border-cyan-500/20 text-cyan-400 text-xs font-bold uppercase tracking-widest"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-              Available for Work
+              Available for new projects
             </motion.div>
 
-            <h1 className="text-5xl md:text-7xl font-black leading-[1.1] mb-6">
-              <span className="block text-slate-300">I am a</span>
-              <TypeAnimation
-                sequence={[
-                  'Modern Web Developer', 2200,
-                  'Full-Stack Developer', 2200,
-                  'React & Next.js Expert', 2200,
-                  'UX/UI Solutions Architect', 2200,
-                  'Creative Problem Solver', 2200,
-                ]}
-                wrapper="span"
-                speed={55}
-                deletionSpeed={65}
-                repeat={Infinity}
-                className="text-gradient whitespace-nowrap"
-                style={{ display: 'block' }}
-              />
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
+              <span className="text-slate-200">I am a</span>
+              <div className="text-gradient mt-2 text-2xl sm:text-4xl md:text-5xl lg:text-6xl whitespace-nowrap overflow-visible">
+                <TypeAnimation
+                  sequence={[
+                    'Full-Stack Developer', 2200,
+                    'Frontend Architect', 2200,
+                    'Backend Engineer', 2200,
+                    'MERN Stack Expert', 2200,
+                    'Digital Solution Builder', 2200,
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  repeat={Infinity}
+                />
+              </div>
             </h1>
 
-            <p className="text-slate-400 text-lg leading-relaxed max-w-md mb-10">
+            <p className="text-slate-400 text-base md:text-lg leading-relaxed max-w-2xl lg:max-w-md mx-auto lg:mx-0 mb-10">
               Transforming innovative ideas into high-performance digital realities with cutting-edge web technologies.
             </p>
 
-            <div className="flex flex-wrap gap-4">
-              <a href="#contact" className="btn-primary flex items-center gap-2 text-white group">
-                Hire Me <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <a href="#contact" className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2 text-white group px-8 py-4">
+                Hire Me <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </a>
-              <a href="#projects" className="btn-secondary flex items-center gap-2 text-slate-300">
-                View Projects
+              <a href="#projects" className="btn-secondary w-full sm:w-auto flex items-center justify-center gap-2 text-slate-300 px-8 py-4">
+                View My Work
               </a>
             </div>
 
-            {/* Stats */}
-            <div className="flex gap-10 mt-14">
-              {[['2+', 'Years Exp.'], ['20+', 'Projects'], ['100%', 'Dedication']].map(([num, label]) => (
-                <div key={label}>
-                  <div className="text-2xl font-black text-gradient">{num}</div>
-                  <div className="text-xs text-slate-500 uppercase tracking-widest mt-1">{label}</div>
+            {/* Simple Stats Bar */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-8 md:gap-12 mt-12 pt-8 border-t border-white/5">
+              {[
+                { label: 'Experience', val: '2+ Years' },
+                { label: 'Projects', val: '20+' },
+                { label: 'Response', val: '100%' },
+              ].map((s, i) => (
+                <div key={i} className="text-center lg:text-left">
+                  <div className="text-2xl font-black text-white">{s.val}</div>
+                  <div className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mt-1">{s.label}</div>
                 </div>
               ))}
             </div>
           </motion.div>
 
-          {/* Right image */}
+          {/* Image/Asset Area */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, delay: 0.25, ease: 'easeOut' }}
-            className="flex justify-center items-center h-full"
+            transition={{ duration: 1, delay: 0.3 }}
+            className="flex-1 flex justify-center lg:justify-end order-1 lg:order-2"
           >
-            <div className="relative w-full max-w-[440px] aspect-square flex items-center justify-center">
-              {/* Glow ring */}
-              <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-tr from-cyan-500/30 via-indigo-500/20 to-fuchsia-500/30 blur-2xl scale-110" />
+            <div className="relative w-full max-w-[320px] sm:max-w-[450px] aspect-square flex items-center justify-center">
               
-              {/* Clean Rotating Border Layer */}
-              <div className="absolute inset-0 rounded-[2.5rem] p-[1px] overflow-hidden pointer-events-none z-0">
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
-                  className="absolute inset-[-150%] opacity-60"
-                  style={{ background: 'conic-gradient(from 0deg, transparent, #22d3ee, transparent, #818cf8, transparent)' }}
-                />
-              </div>
-
+              {/* Animated Background Aura */}
               <motion.div
-                animate={{ y: [0, -15, 0] }}
-                transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
-                className="relative w-full h-full z-10 p-[1px] rounded-[2.5rem] overflow-hidden"
+                animate={{ 
+                  scale: [1, 1.1, 1],
+                  opacity: [0.15, 0.3, 0.15]
+                }}
+                transition={{ duration: 5, repeat: Infinity }}
+                className="absolute inset-0 bg-gradient-to-tr from-cyan-500 via-indigo-500 to-fuchsia-500 blur-[80px] rounded-full"
+              />
+
+              {/* Unique Borderless Float Animation */}
+              <motion.div
+                animate={{ 
+                  y: [0, -20, 0],
+                  rotate: [0, 2, 0]
+                }}
+                transition={{ 
+                  duration: 6, 
+                  repeat: Infinity, 
+                  ease: "easeInOut" 
+                }}
+                className="relative z-10 w-full"
               >
                 <img
-                  src="/avatar.png"
-                  alt="Developer Avatar"
-                  className="w-full h-full object-cover rounded-[2.5rem]"
+                  src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop"
+                  alt="Abstract Tech Evolution"
+                  className="w-full h-auto drop-shadow-[0_0_40px_rgba(34,211,238,0.25)] rounded-[3rem]"
                 />
-                <div className="absolute inset-0 rounded-[2.5rem] border border-white/10 pointer-events-none" />
+              </motion.div>
+
+              {/* Floating Element: Code Snippet Style */}
+              <motion.div
+                animate={{ y: [0, 15, 0] }}
+                transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+                className="absolute -top-6 -right-6 p-4 glass-card rounded-2xl border border-white/10 hidden sm:block backdrop-blur-md"
+              >
+                <code className="text-cyan-400 text-xs font-mono">{"<Dev />"}</code>
               </motion.div>
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>

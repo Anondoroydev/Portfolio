@@ -1,22 +1,42 @@
-import { Routes, Route } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
-import Home from './pages/Home'
-import Footer from './components/Footer'
 import MouseGlow from './components/MouseGlow'
 import ScrollToTop from './components/ScrollToTop'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import Preloader from './components/Preloader'
 
-export default function App() {
+function App() {
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 2500)
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
-    <div className="min-h-screen selection:bg-cyan-500/30 relative">
-      <MouseGlow />
-      <ScrollToTop />
-      <Navbar />
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </main>
-      <Footer />
+    <div className="bg-[#050816] text-white selection:bg-cyan-500/30">
+      <AnimatePresence mode="wait">
+        {loading && <Preloader key="loader" />}
+      </AnimatePresence>
+
+      {!loading && (
+        <>
+          <MouseGlow />
+          <Navbar />
+          <main>
+            <Home />
+          </main>
+          <Footer />
+          <ScrollToTop />
+        </>
+      )}
     </div>
   )
 }
+
+export default App
