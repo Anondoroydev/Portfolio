@@ -36,7 +36,7 @@ export default function Hero() {
               <span className="block text-slate-300">I am a</span>
               <TypeAnimation
                 sequence={[
-                  'Software Engineer', 2200,
+                  'Modern Web Developer', 2200,
                   'Full-Stack Developer', 2200,
                   'React & Next.js Expert', 2200,
                   'UX/UI Solutions Architect', 2200,
