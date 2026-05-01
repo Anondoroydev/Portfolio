@@ -27,12 +27,12 @@ export default function Contact() {
                   className="p-6 rounded-[2rem] glass-card border-gradient flex flex-col gap-3 relative overflow-hidden group"
                 >
                   <div className={`absolute top-0 right-0 w-24 h-24 bg-${item.color}-500/5 blur-2xl rounded-full -mr-10 -mt-10`} />
-                  <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 rounded-2xl bg-cyan-500/5 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
                     <item.icon size={22} />
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-1">{item.title}</h4>
-                    <p className="text-white font-bold text-lg mb-1">{item.value}</p>
+                    <p className="text-slate-100 font-bold text-lg mb-1">{item.value}</p>
                     <p className="text-slate-500 text-xs leading-relaxed">{item.sub}</p>
                   </div>
                 </motion.div>
@@ -46,26 +46,26 @@ export default function Contact() {
               <form className="h-full glass-card rounded-[2.5rem] p-8 md:p-12 flex flex-col gap-8 relative overflow-hidden border-gradient">
                 <div className="flex items-center gap-3 mb-2">
                   <Sparkles size={20} className="text-cyan-400 animate-pulse" />
-                  <h3 className="text-2xl font-black text-white">Send a Message</h3>
+                  <h3 className="text-2xl font-black text-slate-100">Send a Message</h3>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
                     <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 ml-1">Full Name</label>
                     <input type="text" placeholder="John Doe" 
-                      className="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-cyan-400/50 focus:bg-cyan-500/5 transition-all text-sm" />
+                      className="bg-slate-500/5 border border-slate-500/10 rounded-2xl px-6 py-4 outline-none focus:border-cyan-400/50 focus:bg-cyan-500/5 transition-all text-sm" />
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 ml-1">Email Address</label>
                     <input type="email" placeholder="john@example.com" 
-                      className="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-indigo-400/50 focus:bg-indigo-500/5 transition-all text-sm" />
+                      className="bg-slate-500/5 border border-slate-500/10 rounded-2xl px-6 py-4 outline-none focus:border-indigo-400/50 focus:bg-indigo-500/5 transition-all text-sm" />
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-2">
                   <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 ml-1">Your Message</label>
                   <textarea rows={5} placeholder="Tell me about your project or just say hi..." 
-                    className="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-fuchsia-400/50 focus:bg-fuchsia-500/5 transition-all text-sm resize-none" />
+                    className="bg-slate-500/5 border border-slate-500/10 rounded-2xl px-6 py-4 outline-none focus:border-fuchsia-400/50 focus:bg-fuchsia-500/5 transition-all text-sm resize-none" />
                 </div>
 
                 <motion.button

@@ -19,7 +19,7 @@ function App() {
   }, [])
 
   return (
-    <div className="bg-[#050816] text-white selection:bg-cyan-500/30">
+    <div className="bg-[#050816] text-slate-200 selection:bg-cyan-500/30">
       <AnimatePresence mode="wait">
         {loading && <Preloader key="loader" />}
       </AnimatePresence>

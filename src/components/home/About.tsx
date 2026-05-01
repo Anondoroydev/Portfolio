@@ -66,7 +66,7 @@ export default function About() {
                 Passionate <span className="text-gradient">Developer</span><br />& Problem Solver
               </h2>
               <p className="text-slate-400 text-sm leading-relaxed mb-4 text-center lg:text-left">
-                I'm <span className="text-white font-semibold">Anondo</span>, a results-driven Full Stack Developer with a passion for building scalable, elegant solutions to complex problems. Based in Dhaka, I work with clients globally to deliver premium digital experiences.
+                I'm <span className="text-slate-100 font-semibold">Anondo</span>, a results-driven Full Stack Developer with a passion for building scalable, elegant solutions to complex problems. Based in Dhaka, I work with clients globally to deliver premium digital experiences.
               </p>
 
               {/* Stats */}
@@ -78,7 +78,7 @@ export default function About() {
                 ].map(({ num, label }) => (
                   <motion.div key={label} whileHover={{ scale: 1.05 }}
                     className="p-4 rounded-2xl text-center relative overflow-hidden group"
-                    style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                    style={{ background: 'rgba(34,211,238,0.03)', border: '1px solid rgba(34,211,238,0.06)' }}>
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-fuchsia-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="text-2xl font-black text-gradient mb-0.5">{num}</div>
                     <div className="text-xs text-slate-500">{label}</div>
@@ -101,14 +101,14 @@ export default function About() {
                   style={{ background: 'rgba(12,18,42,0.8)', border: '1px solid rgba(255,255,255,0.06)' }}
                 >
                   <div className="absolute right-4 top-1/2 -translate-y-1/2 text-[7rem] font-black leading-none select-none pointer-events-none"
-                    style={{ color: 'rgba(255,255,255,0.03)', fontFamily: 'Outfit, sans-serif' }}>
+                    style={{ color: 'rgba(34,211,238,0.03)', fontFamily: 'Outfit, sans-serif' }}>
                     0{idx + 1}
                   </div>
                   <div className={`absolute inset-0 bg-gradient-to-r ${color} opacity-0 group-hover:opacity-30 transition-opacity duration-400`} />
 
                   <div className="relative shrink-0">
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center z-10 relative"
-                      style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                      style={{ background: 'rgba(34,211,238,0.05)', border: '1px solid rgba(34,211,238,0.1)' }}>
                       <Icon className={`${iconColor} w-6 h-6`} />
                     </div>
                     <div className="absolute -top-2 -right-2 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-black z-20"
@@ -118,7 +118,7 @@ export default function About() {
                   </div>
 
                   <div className="relative z-10">
-                    <h3 className="text-lg font-bold text-white mb-1.5">{title}</h3>
+                    <h3 className="text-lg font-bold text-slate-100 mb-1.5">{title}</h3>
                     <p className="text-slate-400 text-sm leading-relaxed">{desc}</p>
                   </div>
                 </motion.div>

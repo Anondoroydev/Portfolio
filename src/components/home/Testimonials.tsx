@@ -66,7 +66,7 @@ export default function Testimonials() {
                           "{testimonials[currentIndex].content}"
                         </p>
                         <div>
-                          <h4 className="text-2xl font-black text-white tracking-tight">{testimonials[currentIndex].name}</h4>
+                          <h4 className="text-2xl font-black text-slate-100 tracking-tight">{testimonials[currentIndex].name}</h4>
                           <p className="text-cyan-400 font-bold uppercase tracking-widest text-xs mt-1">{testimonials[currentIndex].role}</p>
                         </div>
                       </div>
@@ -107,7 +107,7 @@ export default function Testimonials() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setShowReviewForm(true)}
-                className="flex items-center gap-3 px-12 py-5 rounded-full bg-white/5 border border-white/10 text-white font-black uppercase tracking-widest text-xs hover:bg-white/10 hover:border-cyan-400/30 transition-all"
+                className="flex items-center gap-3 px-12 py-5 rounded-full bg-cyan-500/5 border border-cyan-500/10 text-slate-100 font-black uppercase tracking-widest text-xs hover:bg-cyan-500/10 hover:border-cyan-400/30 transition-all"
               >
                 <MessageSquare size={18} className="text-cyan-400" />
                 Leave a Feedback
@@ -145,14 +145,14 @@ export default function Testimonials() {
                     <div className="w-16 h-16 rounded-3xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 mx-auto mb-6">
                       <StarIcon size={32} />
                     </div>
-                    <h3 className="text-3xl font-black text-white mb-3">Share Your <span className="text-gradient">Story</span></h3>
+                    <h3 className="text-3xl font-black text-slate-100 mb-3">Share Your <span className="text-gradient">Story</span></h3>
                     <p className="text-slate-500 text-sm">Your feedback drives my passion for excellence.</p>
                   </div>
 
                   <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="flex flex-col gap-3">
                       <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 ml-1">Full Name</label>
-                      <input type="text" placeholder="John Doe" className="bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white outline-none focus:border-cyan-400/50 transition-all" />
+                      <input type="text" placeholder="John Doe" className="bg-cyan-500/5 border border-cyan-500/10 rounded-2xl px-6 py-5 text-slate-200 outline-none focus:border-cyan-400/50 transition-all" />
                     </div>
                     <div className="flex flex-col gap-3">
                       <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 ml-1">Your Role</label>
@@ -167,7 +167,7 @@ export default function Testimonials() {
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         onClick={(e) => { e.preventDefault(); setShowReviewForm(false); }}
-                        className="w-full py-5 rounded-3xl bg-gradient-to-r from-cyan-500 via-indigo-500 to-fuchsia-600 text-white font-black uppercase tracking-widest text-sm shadow-2xl shadow-indigo-500/30"
+                        className="w-full py-5 rounded-3xl bg-gradient-to-r from-cyan-500 via-indigo-500 to-fuchsia-600 text-slate-50 font-black uppercase tracking-widest text-sm shadow-2xl shadow-indigo-500/30"
                       >
                         Publish Review
                       </motion.button>

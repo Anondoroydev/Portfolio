@@ -49,7 +49,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           <a href="#" className="text-2xl font-black tracking-tighter bg-clip-text text-transparent"
             style={{ backgroundImage: 'linear-gradient(135deg, #22d3ee, #818cf8, #c084fc)' }}>
-            ANONDO<span className="text-white">.</span>
+            ANONDO<span className="text-cyan-400">.</span>
           </a>
 
           {/* Desktop Nav */}

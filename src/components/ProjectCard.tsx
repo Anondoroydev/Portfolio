@@ -15,7 +15,7 @@ export default function ProjectCard({ title, description, image, tags, githubUrl
     <motion.div
       whileHover={{ y: -12 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="group relative p-[2px] rounded-3xl overflow-hidden flex flex-col h-full bg-white/5"
+      className="group relative p-[2px] rounded-3xl overflow-hidden flex flex-col h-full bg-cyan-500/5"
     >
       {/* Running RGB Rainbow Border (Always Visible) */}
       <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
@@ -42,7 +42,7 @@ export default function ProjectCard({ title, description, image, tags, githubUrl
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="w-10 h-10 rounded-full bg-slate-900/80 backdrop-blur-md flex items-center justify-center text-white border border-white/10 hover:border-cyan-400/50 hover:text-cyan-400 transition-all"
+              className="w-10 h-10 rounded-full bg-slate-900/80 backdrop-blur-md flex items-center justify-center text-slate-200 border border-cyan-500/10 hover:border-cyan-400/50 hover:text-cyan-400 transition-all"
             >
               <Github size={18} />
             </motion.a>
@@ -76,20 +76,20 @@ export default function ProjectCard({ title, description, image, tags, githubUrl
           <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-500">Case Study</span>
         </div>
         
-        <h3 className="text-xl font-black text-white mb-2 group-hover:text-cyan-400 transition-colors uppercase">{title}</h3>
+        <h3 className="text-xl font-black text-slate-100 mb-2 group-hover:text-cyan-400 transition-colors uppercase">{title}</h3>
         <p className="text-slate-400 text-xs leading-relaxed mb-4 line-clamp-2">{description}</p>
         
         {/* Tech Tags */}
         <div className="flex flex-wrap gap-1.5 mb-6 mt-auto">
           {tags.map((tag, idx) => (
-            <span key={idx} className="text-[9px] font-bold px-2.5 py-1 rounded-lg border border-white/5 bg-white/5 text-slate-300 uppercase tracking-tight group-hover:border-cyan-500/20 group-hover:bg-cyan-500/5 transition-colors">
+            <span key={idx} className="text-[9px] font-bold px-2.5 py-1 rounded-lg border border-cyan-500/10 bg-cyan-500/5 text-slate-300 uppercase tracking-tight group-hover:border-cyan-500/20 group-hover:bg-cyan-500/10 transition-colors">
               {tag}
             </span>
           ))}
         </div>
         
         {/* Footer Link */}
-        <div className="flex items-center justify-between pt-4 border-t border-white/5 mt-auto">
+        <div className="flex items-center justify-between pt-4 border-t border-cyan-500/10 mt-auto">
           <span className="text-[10px] font-semibold text-slate-600 transition-colors italic">Explored</span>
           <div className="flex items-center gap-1.5 text-xs font-bold text-cyan-400 group-hover:underline">
             View <ArrowRight size={14} />

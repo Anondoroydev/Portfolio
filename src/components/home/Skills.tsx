@@ -19,7 +19,7 @@ export default function Skills() {
             <div className="absolute right-0 top-0 bottom-0 w-28 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, #050816, transparent)' }} />
             <div className="animate-marquee">
               {[...skills1, ...skills1].map((s, i) => (
-                <span key={i} className="inline-flex items-center gap-2 mx-3 px-5 py-2.5 rounded-full text-sm font-medium text-slate-300 hover:text-white transition-colors cursor-default whitespace-nowrap"
+                <span key={i} className="inline-flex items-center gap-2 mx-3 px-5 py-2.5 rounded-full text-sm font-medium text-slate-300 hover:text-slate-100 transition-colors cursor-default whitespace-nowrap"
                   style={{ background: 'rgba(34,211,238,0.07)', border: '1px solid rgba(34,211,238,0.15)' }}>
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />{s}
                 </span>
@@ -33,7 +33,7 @@ export default function Skills() {
             <div className="absolute right-0 top-0 bottom-0 w-28 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, #050816, transparent)' }} />
             <div className="animate-marquee" style={{ animationDirection: 'reverse', animationDuration: '22s' }}>
               {[...skills2, ...skills2].map((s, i) => (
-                <span key={i} className="inline-flex items-center gap-2 mx-3 px-5 py-2.5 rounded-full text-sm font-medium text-slate-300 hover:text-white transition-colors cursor-default whitespace-nowrap"
+                <span key={i} className="inline-flex items-center gap-2 mx-3 px-5 py-2.5 rounded-full text-sm font-medium text-slate-300 hover:text-slate-100 transition-colors cursor-default whitespace-nowrap"
                   style={{ background: 'rgba(192,132,252,0.07)', border: '1px solid rgba(192,132,252,0.15)' }}>
                   <span className="w-1.5 h-1.5 rounded-full bg-fuchsia-400 animate-pulse" />{s}
                 </span>

@@ -17,18 +17,23 @@
 
 @layer utilities {
   .glass {
-    background: rgba(255,255,255,0.04);
+    background: rgba(34,211,238,0.04);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(34,211,238,0.08);
   }
   .glass-card {
     background: rgba(15,20,40,0.7);
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(255,255,255,0.06);
+    border: 1px solid rgba(34,211,238,0.06);
   }
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #22d3ee 0%, #818cf8 50%, #c084fc 100%);
+    background-image: linear-gradient(135deg, #22d3ee 0%, #818cf8 33%, #c084fc 66%, #22d3ee 100%);
+    background-size: 200% auto;
+    animation: textGradient 4s linear infinite;
+  }
+  @keyframes textGradient {
+    to { background-position: 200% center; }
   }
   .border-gradient {
     border: 1px solid transparent;
@@ -60,11 +65,11 @@
   }
   .btn-secondary {
     @apply px-7 py-3.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(34,211,238,0.05);
+    border: 1px solid rgba(34,211,238,0.12);
   }
   .btn-secondary:hover {
-    background: rgba(255,255,255,0.10);
+    background: rgba(34,211,238,0.10);
     border-color: rgba(34,211,238,0.4);
     transform: translateY(-2px);
   }
@@ -95,6 +100,12 @@
 /* Neon underline */
 .neon-line {
   height: 2px;
-  background: linear-gradient(90deg, transparent, #22d3ee, #818cf8, transparent);
+  background: linear-gradient(90deg, transparent, #22d3ee, #818cf8, #c084fc, transparent);
+  background-size: 200% auto;
+  animation: textGradient 3s linear infinite reverse;
+}
+
+.colorful-bg-blob {
+  @apply absolute rounded-full blur-[120px] opacity-20 animate-pulse;
 }
  

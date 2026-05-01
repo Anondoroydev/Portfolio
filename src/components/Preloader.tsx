@@ -36,12 +36,12 @@ export default function Preloader() {
         >
           <div className="text-4xl font-black tracking-tighter bg-clip-text text-transparent"
             style={{ backgroundImage: 'linear-gradient(135deg, #22d3ee, #818cf8, #c084fc)' }}>
-            ANONDO<span className="text-white">.</span>
+            ANONDO<span className="text-cyan-400">.</span>
           </div>
         </motion.div>
 
         {/* Outer Ring */}
-        <div className="w-64 h-1 bg-white/5 rounded-full overflow-hidden relative">
+        <div className="w-64 h-1 bg-cyan-500/10 rounded-full overflow-hidden relative">
           <motion.div 
             className="absolute left-0 top-0 h-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-fuchsia-500"
             animate={{ width: `${progress}%` }}
