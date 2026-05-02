@@ -9,7 +9,7 @@ export default function Contact() {
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={fadeUp}>
           <div className="text-center mb-16">
             <p className="text-xs font-semibold tracking-[0.3em] uppercase text-cyan-400 mb-3">Reach Out</p>
-            <h2 className="section-title">Contact <span className="text-gradient">Us</span></h2>
+            <h2 className="section-title">Contact <span className="text-gradient">Me</span></h2>
             <div className="neon-line w-24 mx-auto mt-4" />
           </div>
 
