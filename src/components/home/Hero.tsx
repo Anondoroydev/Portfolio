@@ -10,24 +10,24 @@ export default function Hero() {
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[140px]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="relative z-10 px-4 mx-auto w-full max-w-7xl sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-12 items-center lg:grid-cols-2 lg:gap-20">
           
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center lg:text-left z-20"
+            className="z-20 text-center lg:text-left"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 bg-cyan-500/5 border border-cyan-500/20 text-cyan-400 text-[10px] font-bold uppercase tracking-[0.2em] shadow-[0_0_20px_rgba(34,211,238,0.1)]">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+              <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
               Digital Experience Architect
             </div>
 
             <h1 className="font-black leading-[1.05] tracking-tight text-white mb-8"
                 style={{ fontSize: 'clamp(2rem, 6vw, 4.5rem)' }}>
               I am a <br />
-              <div className="text-gradient inline-block mt-1 whitespace-nowrap">
+              <div className="inline-block mt-1 whitespace-nowrap text-gradient">
                 <TypeAnimation
                   sequence={[
                     'Full-Stack Developer', 2500,
@@ -42,15 +42,15 @@ export default function Hero() {
               </div>
             </h1>
 
-            <p className="text-slate-400 text-lg leading-relaxed max-w-md mx-auto lg:mx-0 mb-12">
+            <p className="mx-auto mb-12 max-w-md text-lg leading-relaxed text-slate-400 lg:mx-0">
               Combining logic and creativity to build high-performance digital products for the modern web.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5">
-              <a href="/resume.pdf" target="_blank" className="btn-primary flex items-center justify-center gap-3 px-10 py-5 text-slate-50 shadow-xl shadow-cyan-500/20">
+            <div className="flex flex-col gap-5 justify-center items-center sm:flex-row lg:justify-start">
+              <a href="/resume.pdf" target="_blank" className="flex gap-3 justify-center items-center px-10 py-5 shadow-xl btn-primary text-slate-50 shadow-cyan-500/20">
                 <Download size={18} /> Resume
               </a>
-              <a href="#projects" className="btn-secondary flex items-center justify-center gap-3 px-10 py-5 text-slate-300">
+              <a href="#projects" className="flex gap-3 justify-center items-center px-10 py-5 btn-secondary text-slate-300">
                 <Layout size={18} /> Portfolio
               </a>
             </div>
@@ -90,12 +90,11 @@ export default function Hero() {
                   ]
                 }}
                 transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-                className="relative w-64 h-64 md:w-80 md:h-80 bg-slate-950/20 rounded-full border border-cyan-500/10 flex items-center justify-center p-8 backdrop-blur-sm overflow-hidden group"
+                className="flex overflow-hidden relative justify-center items-center p-8 w-64 h-64 rounded-full border backdrop-blur-sm md:w-80 md:h-80 bg-slate-950/20 border-cyan-500/10 group"
               >
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-20 pointer-events-none" 
-                     style={{ backgroundImage: 'radial-gradient(rgba(34,211,238,0.2) 1px, transparent 0)', backgroundSize: '16px 16px' }} />
-                
+                     style={{ backgroundImage: 'radial-gradient(rgba(34,211,238,0.2) 1px, transparent 0)', backgroundSize: '16px 16px' }} /> 
                 <img 
                   src="/react-core.png" 
                   alt="Tech Core" 
@@ -105,7 +104,7 @@ export default function Hero() {
                 <motion.div 
                   animate={{ y: ['-100%', '100%'] }}
                   transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
-                  className="absolute inset-0 w-full h-32 bg-gradient-to-b from-transparent via-cyan-400/5 to-transparent pointer-events-none"
+                  className="absolute inset-0 w-full h-32 bg-gradient-to-b from-transparent to-transparent pointer-events-none via-cyan-400/5"
                 />
               </motion.div>
 
