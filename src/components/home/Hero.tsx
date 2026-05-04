@@ -125,10 +125,8 @@ export default function Hero() {
                   <item.Icon size={24} />
                 </motion.div>
               ))}
-
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>
